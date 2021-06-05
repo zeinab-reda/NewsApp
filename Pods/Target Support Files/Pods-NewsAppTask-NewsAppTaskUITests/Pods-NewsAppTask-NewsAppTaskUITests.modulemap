@@ -1,0 +1,6 @@
+framework module Pods_NewsAppTask_NewsAppTaskUITests {
+  umbrella header "Pods-NewsAppTask-NewsAppTaskUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
