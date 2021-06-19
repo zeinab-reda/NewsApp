@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 class BaseViewModel {
-    var disposeBag: DisposeBag
+    var disposeBag: DisposeBag 
     init() {
         disposeBag = DisposeBag()
     }

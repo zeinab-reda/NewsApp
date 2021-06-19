@@ -10,6 +10,8 @@ target 'NewsAppTask' do
   pod 'AlamofireImage'
   pod 'JGProgressHUD'
   pod 'OHHTTPStubs/Swift', '~> 8.0.0'
+  pod 'RxCocoa'
+
   end
 
   use_frameworks!

@@ -6,23 +6,27 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 class ChooseCountryViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     private var countryViewModel:ChooseCountryViewModel?
+  
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        countryViewModel?.getCountryList()
-        
-    
+//        countryViewModel?.getCountryList()
+  
+//        debugPrint(results)
+      
     }
     
     
-
-
-
-
+    
+    
+    
+    
 }
