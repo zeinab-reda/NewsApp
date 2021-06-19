@@ -10,10 +10,10 @@ import Foundation
 class Country
 {
     // MARK:- Variable
-    private var countryCode: String
+    var countryCode: String
 
     /// Name of the country
-    private var countryName: String
+    var countryName: String
     
     init()
     {
