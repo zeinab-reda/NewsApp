@@ -6,15 +6,25 @@
 //
 
 import Foundation
+
+let categories :[NewsCategory] = [.business , .entertainment , .general , .health , .science , .sports , .technology]
+
 struct K {
-    struct ProductionServer {
-        static let baseApiURL = "https://newsapi.org/"
-        static let apiKey = "a9860808253d46e1b686dbc7ed9aa9bd"
+    enum ProductionServer :String{
+        case baseApiURL = "https://newsapi.org/"
+        case apiKey = "a9860808253d46e1b686dbc7ed9aa9bd"
     }
-    struct StoryBoard
+    enum StoryBoard:String
     {
-        static let mainSB = "Main"
+         case boardingSB = "Boarding"
+         case dashboardSB = "Dashboard"
     }
+    
+    enum Keys:String {
+        case country = "country"
+        case category = "category"
+    }
+    
 }
 
 enum HTTPHeaderField: String {

@@ -18,7 +18,7 @@ enum APIClientEndpoint {
 extension APIClientEndpoint: TargetType {
     
     var baseURL: URL {
-        guard let url = URL(string:K.ProductionServer.baseApiURL) else { fatalError() }
+        guard let url = URL(string:K.ProductionServer.baseApiURL.rawValue) else { fatalError() }
         return url
     }
     
@@ -66,7 +66,7 @@ private extension APIClientEndpoint {
     func makeTopHeadlinesParameters(q: String?, category: NewsCategory, country: NewsCountry, pageSize: Int?, page: Int?) -> [String: String] {
         var parameters = [String: String]()
         
-        parameters["apiKey"] = K.ProductionServer.apiKey
+        parameters["apiKey"] = K.ProductionServer.apiKey.rawValue
         
         if let q = q {
             parameters["q"] = q

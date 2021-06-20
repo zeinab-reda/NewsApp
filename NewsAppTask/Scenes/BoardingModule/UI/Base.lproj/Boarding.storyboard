@@ -18,7 +18,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hr3-Ef-cmS">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -31,7 +31,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Choose your country" id="tK2-eL-Wuw">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="T9q-Jg-Nr2"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="yDB-jJ-9lU">
+                            <connections>
+                                <segue destination="amr-cS-cFe" kind="show" id="vfO-dZ-C4f"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="hr3-Ef-cmS" id="Q2L-Ze-IQR"/>
@@ -41,20 +45,36 @@
             </objects>
             <point key="canvasLocation" x="1034.7826086956522" y="75"/>
         </scene>
-        <!--View Controller-->
+        <!--Choose favourite category-->
         <scene sceneID="VDJ-gw-Ito">
             <objects>
-                <viewController id="amr-cS-cFe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseCategoryViewController" id="amr-cS-cFe" customClass="ChooseCategoryViewController" customModule="NewsAppTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TBH-OB-rms">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ACV-GW-xY4">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="S6m-ok-9Qu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ACV-GW-xY4" firstAttribute="top" secondItem="S6m-ok-9Qu" secondAttribute="top" id="74E-C5-rOs"/>
+                            <constraint firstItem="ACV-GW-xY4" firstAttribute="leading" secondItem="S6m-ok-9Qu" secondAttribute="leading" id="MyU-EI-6vG"/>
+                            <constraint firstItem="S6m-ok-9Qu" firstAttribute="trailing" secondItem="ACV-GW-xY4" secondAttribute="trailing" id="n2y-vC-i6b"/>
+                            <constraint firstItem="S6m-ok-9Qu" firstAttribute="bottom" secondItem="ACV-GW-xY4" secondAttribute="bottom" id="ySG-Ic-31F"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Choose favourite category" id="Umc-nt-fAV"/>
+                    <connections>
+                        <outlet property="tableView" destination="ACV-GW-xY4" id="YMr-bC-250"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0s-so-w6u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2274" y="75"/>
+            <point key="canvasLocation" x="2190" y="75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xk4-20-2FU">
@@ -64,6 +84,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6vn-s1-cAY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

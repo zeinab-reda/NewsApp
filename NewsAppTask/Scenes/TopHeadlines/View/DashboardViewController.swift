@@ -14,11 +14,11 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        viewModel = NewsViewModel()
-        viewModel?.getTopHeadlines(q:"", category: NewsCategory.sports, country: NewsCountry.us, pageSize:nil, page: nil)
-        viewModel?.newsDriver.drive { (articles) in
-            debugPrint(articles.count)
-        }.disposed(by: disposeBag)
+//        viewModel = NewsViewModel()
+//        viewModel?.getTopHeadlines(q:"", category: NewsCategory.sports, country: NewsCountry.us, pageSize:nil, page: nil)
+//        viewModel?.newsDriver.drive { (articles) in
+//            debugPrint(articles.count)
+//        }.disposed(by: disposeBag)
         
     }
 }
