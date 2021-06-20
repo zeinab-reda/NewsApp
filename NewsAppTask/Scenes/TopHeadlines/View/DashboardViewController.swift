@@ -8,17 +8,61 @@
 import UIKit
 import RxCocoa
 import RxSwift
-class DashboardViewController: UIViewController {
+class DashboardViewController: BaseViewController {
     private var viewModel: NewsViewModelType?
     private let disposeBag = DisposeBag()
+    @IBOutlet weak var tableView: UITableView!
+    private let cellIdentifer = "HeadlineTableViewCell"
+
     
     override func viewDidLoad() {
-        
-//        viewModel = NewsViewModel()
-//        viewModel?.getTopHeadlines(q:"", category: NewsCategory.sports, country: NewsCountry.us, pageSize:nil, page: nil)
-//        viewModel?.newsDriver.drive { (articles) in
-//            debugPrint(articles.count)
-//        }.disposed(by: disposeBag)
-        
+        setupView()
+        setupTableView()
     }
+    
+    private func setupTableView()
+    {
+        // register cell
+        tableView.register(UINib(nibName: cellIdentifer, bundle: nil),
+                           forCellReuseIdentifier: cellIdentifer)
+        
+        tableView.rowHeight = 200.0
+        
+        // fetch headlines
+        viewModel?.getTopHeadlines(q:"", category: NewsCategory.sports, country: NewsCountry.us, pageSize:10, page: 0)
+        
+        // binding table
+        viewModel?.newsDriver.drive { (articles) in
+            
+        }.disposed(by: disposeBag)
+        
+        viewModel?.newsDriver.drive(tableView.rx.items(cellIdentifier: cellIdentifer,
+                                                      cellType: HeadlineTableViewCell.self)) { _, element, cell in
+            cell.item = element
+        }.disposed(by: disposeBag)
+        
+
+    }
+    
+    
+    private func setupView() {
+        viewModel = NewsViewModel()
+        viewModel?.loadingDriver.drive { [weak self] isloading in
+            isloading == true ? self?.showLoading() :  self?.hideLoading()
+            self?.tableView.isHidden = isloading
+        }.disposed(by: disposeBag)
+
+        viewModel?.errorDriver.drive { [weak self] message in
+            self?.showAlert(message)
+        }.disposed(by: disposeBag)
+    }
+
+    private func showAlert(_ message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { [weak self] _ in
+            self?.viewModel?.getTopHeadlines(q: "", category: .business, country: .ae, pageSize: 10, page: 0)
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+ 
 }

@@ -23,9 +23,7 @@ class ChooseCountryViewController: UIViewController {
         setupTableView()
 
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-    }
+  
  
     private func setupTableView()
     {
@@ -43,7 +41,7 @@ class ChooseCountryViewController: UIViewController {
         //list countries
         viewModel?.getCountryList()
 
-        // get selected model item
+        // set selected model item
         
         tableView.rx.modelSelected(Country.self).subscribe { item in
             Helper.saveUserDefault(key: K.Keys.country.rawValue, value: item.element?.countryCode ?? "")

@@ -7,14 +7,14 @@
 //
 
 public enum NewsCategory: String, Decodable {
-    case all
-    case business
-    case entertainment
-    case general
-    case health
-    case science
-    case sports
-    case technology
+    case all = "All"
+    case business = "Business"
+    case entertainment = "Entertainment"
+    case general = "General"
+    case health = "Health"
+    case science = "Science"
+    case sports = "Sports"
+    case technology = "Technology"
 }
 
 

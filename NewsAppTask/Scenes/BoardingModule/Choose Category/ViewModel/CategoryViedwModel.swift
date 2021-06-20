@@ -10,13 +10,14 @@ import RxSwift
 import RxCocoa
 
 protocol CategoryViewModelType {
-    var categoriesObservable: Observable<[NewsCategory]> { get }
+    var categoriesObservable: Observable<[CategoryModelItem]> { get }
     func getCategories()
+    func validateNumberofFav() -> Observable<[CategoryModelItem]>
 }
 
 class CategoryViewModel: BaseViewModel, CategoryViewModelType {
-    var categoriesObservable: Observable<[NewsCategory]>
-    private let categoriesSubject = BehaviorRelay<[NewsCategory]>(value:[])
+    var categoriesObservable: Observable<[CategoryModelItem]>
+    private let categoriesSubject = BehaviorRelay<[CategoryModelItem]>(value:[])
 
     override init() {
         categoriesObservable = categoriesSubject.asObservable()
@@ -24,7 +25,24 @@ class CategoryViewModel: BaseViewModel, CategoryViewModelType {
     }
 
     func getCategories() {
-        categoriesSubject.accept(categories)
+        var categoriesList:[CategoryModelItem] = []
+        for (_,item) in categories.enumerated()
+        {
+            categoriesList.append(CategoryModelItem(item: item, selected: false))
+        }
+        categoriesSubject.accept(categoriesList)
+    }
+    
+    func validateNumberofFav() -> Observable<[CategoryModelItem]>
+    {
+        
+        let seq  = categoriesSubject.map {
+            $0.filter { $0.selected == true }
+        }.filter({ (cateogires) -> Bool in
+            cateogires.count == 3
+        })
+        return seq
+        
     }
 }
 

@@ -10,9 +10,10 @@ import UIKit
 class CategoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var categoryLb: UILabel!
-    var item: NewsCategory? {
+  
+    var item: CategoryModelItem? {
         didSet {
-            categoryLb.text = item?.rawValue
+            categoryLb.text = item?.title
         }
     }
 

@@ -23,32 +23,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C513C0CD-BABD-4CFB-BDB8-9146E2A72517"
-            shouldBeEnabled = "Yes"
+            uuid = "CB7DCE9D-D4C8-4FEE-B37F-1DD22E456D52"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsAppTask/Scenes/BoardingModule/Choose Category/ViewModel/CategoryViedwModel.swift"
+            filePath = "NewsAppTask/Scenes/BoardingModule/Choose Category/View/ChooseCategoryViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "CategoryViewModel"
-            landmarkType = "3">
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "setupTableView()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F3A51BA9-ED38-44CE-AD26-26C78FF27B75"
+            uuid = "9AF61C84-5E1A-4118-B05E-FE06A8FB88CA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsAppTask/Scenes/BoardingModule/Choose Category/ViewModel/CategoryViedwModel.swift"
+            filePath = "NewsAppTask/Scenes/TopHeadlines/ViewModel/NewsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "getCategories()"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "getTopHeadlines(q:category:country:pageSize:page:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

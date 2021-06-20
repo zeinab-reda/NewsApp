@@ -29,6 +29,14 @@ class Helper :NSObject{
     static func isKeyPresentInUserDefaults(key: String) -> Bool {
         return userDef.object(forKey: key) != nil
     }
+    
+    static func convertDatetoString(from date: Date,to formate: String) -> String {
+        let formatter = DateFormatter()
+        // convert your string to date
+        formatter.dateFormat = formate
+        return formatter.string(from: date)
+
+    }
 
  
 

@@ -11,6 +11,7 @@ enum MyNavigation: Navigation {
     case country
     case category
     case dashboard
+    case search
 }
 struct MyAppNavigation: AppNavigation {
 
@@ -25,6 +26,9 @@ struct MyAppNavigation: AppNavigation {
                 
             case .dashboard:
                 return DashboardViewController()
+                
+            case .search:
+                return SearchViewController()
 //            case .profile(let p):
 //                return ProfileViewController(person: p)
             }
