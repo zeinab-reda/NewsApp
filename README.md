@@ -11,7 +11,7 @@ run the app by "pod install" pod file .
 
 
 
-## Frameworks Used in NYTimes
+## Frameworks Used in NewsApp
 
 Alamofireimage for loading remote image Moya for networking RxSwift for reactive
 
