@@ -16,9 +16,6 @@ run the app by "pod install" pod file .
 Alamofireimage for loading remote image Moya for networking RxSwift for reactive
 
 
-## TEST Coverage
-
-run test then navigate to -> show the report navigator then -> code coverage
 
 
 
